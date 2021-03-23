@@ -1,0 +1,19 @@
+.header {
+    grid-area: Header;
+}
+
+.header > div {
+    position: fixed;
+    top: 0;
+    left: 80px;
+    z-index: 11;
+    height: 80px;
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    background-color: red; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+}
+
+

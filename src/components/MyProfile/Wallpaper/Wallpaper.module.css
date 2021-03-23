@@ -1,0 +1,35 @@
+.wallpaper {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    position: relative;
+    grid-area: Wallpaper;
+}
+
+.wallpaper > div:first-child {
+    min-height: 200px;
+    position: relative;
+    padding: 0 0 24.8%;
+}
+
+.wallpaper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.container {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
+    display: grid;
+    justify-items: end;
+    padding: 0 20px;
+}

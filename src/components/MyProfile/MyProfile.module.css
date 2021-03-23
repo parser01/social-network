@@ -1,0 +1,12 @@
+.profile {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "Wallpaper Wallpaper"
+                         "ProfileMenu ProfileMenu"
+                         "LeftPanel RightPanel";
+    column-gap: 28px;
+}

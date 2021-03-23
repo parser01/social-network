@@ -1,0 +1,15 @@
+.iconMenu img {
+    max-width: 100%;
+}
+
+.iconMenu li {
+    padding: 25px;
+}
+
+.iconMenu a {
+    cursor: pointer;
+}
+
+.iconMenu a.active {
+    outline: 5px solid yellow;
+}

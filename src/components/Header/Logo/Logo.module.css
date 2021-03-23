@@ -1,0 +1,9 @@
+.logo {
+    display: inline-block;
+    flex: 0 0 45px;
+    margin-right: 100px;
+}
+
+.logo img {
+    max-width: 100%;
+}

@@ -1,0 +1,13 @@
+.navbar {
+    grid-area: NavBar;
+    background-color: red;
+}
+
+.navbar > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 80px;
+    height: 100%;
+}

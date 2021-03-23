@@ -1,0 +1,9 @@
+.burger {
+    padding: 22px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.burger img {
+    max-width: 100%;
+}

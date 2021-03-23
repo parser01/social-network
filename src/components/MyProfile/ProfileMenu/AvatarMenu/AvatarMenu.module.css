@@ -1,0 +1,22 @@
+.avatarMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.avatarMenu li {
+    margin: 0 35px;
+}
+
+.avatarMenu a {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.avatarMenu a:hover {
+    color: blue;
+}
