@@ -26,7 +26,7 @@ const IconMenu = () => {
             </li>
             <li>
                 <NavLink to="/settings" activeClassName={classes.active}>
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/1242/1242392.svg?token=exp=1616256061~hmac=9ebb4bffec58b6cd633915b7d179766d" alt="gear"/>
+                    <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-gear-512.png" alt="gear"/>
                 </NavLink>
             </li>
         </ul>

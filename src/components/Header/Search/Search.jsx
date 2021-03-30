@@ -6,7 +6,7 @@ const Search = () => {
             <form action="#" method="post">
                 <input type="search" placeholder="Search..."/>
                 <button type="button">
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/483/483356.svg?token=exp=1615923664~hmac=1a4fffc4d9651e1d046efd188e769b45" alt="search icon"/>
+                    <img src="https://cdn0.iconfinder.com/data/icons/zondicons/20/search-512.png" alt="search icon"/>
                 </button>
             </form>
         </div>

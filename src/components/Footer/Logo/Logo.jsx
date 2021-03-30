@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 const Logo = () => {
     return (
         <NavLink to="/home" className={classes.logo}>
-            <img src="https://www.flaticon.com/svg/vstatic/svg/3034/3034938.svg?token=exp=1615932781~hmac=4d7324cc821e503ca1b2943a9672ec65" alt="earth"/>
+            <img src="https://cdn0.iconfinder.com/data/icons/entypo/96/earth1-512.png" alt="earth"/>
         </NavLink>
     );
 };
