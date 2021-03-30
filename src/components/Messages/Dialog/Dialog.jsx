@@ -1,14 +1,12 @@
 import classes from "./Dialog.module.css";
 import Message from "./Message/Message";
 
-const Dialog = () => {
+const Dialog = (props) => {
+    let messages = props.messagesData.map(i => <Message message={i.message} />);
+
     return (
         <div className={classes.dialog}>
-            <Message message="Hi" />
-            <Message message="Wait" />
-            <Message message="What's the problem?" />
-            <Message message="Where are you?" />
-            <Message message="hehehehe" />
+            {messages}
         </div>
     );
 };

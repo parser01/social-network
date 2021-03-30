@@ -1,12 +1,12 @@
 import classes from "./PublishedPosts.module.css";
 import Post from "./Post/Post";
 
-const PublishedPosts = () => {
+const PublishedPosts = (props) => {
+    let posts = props.postsData.map(i => <Post message={i.message} id={i.id} />);
+
     return (
         <div className={classes.publishedPosts}>
-            <Post message="I am working right now!"/>
-            <Post message="It is so cool"/>
-            <Post message="My computer is super."/>
+            {posts}
         </div>
     );
 };
