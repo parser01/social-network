@@ -1,4 +1,4 @@
-import { rerenderAllTree } from "../render";
+let rerenderAllTree;
 
 let state = {
     myProfile: {
@@ -136,11 +136,11 @@ let state = {
             }
         ],
 
-        newMessageText: "Stonehenge"
+        newMessageText: "Milk Way"
     }
 };
 
-export let addPost = () => {
+export const addPost = () => {
     let newPostData = {
         id: 4,
         message: state.myProfile.newPostText,
@@ -148,17 +148,17 @@ export let addPost = () => {
     };
 
     state.myProfile.postsData.push(newPostData);
-    state.myProfile.newPostText = '';
+    state.myProfile.newPostText = "";
     rerenderAllTree(state);
 };
 
-export let typeNewPostText = (newPostText) => {
+export const typeNewPostText = (newPostText) => {
     state.myProfile.newPostText = newPostText;
     rerenderAllTree(state);
 };
 
-export let addMessage = (id) => {
-    if (state.messages.newMessageText !== '') {
+export const addMessage = (id) => {
+    if (state.messages.newMessageText !== "") {
         let myMessageData = {
             id: state.messages.dialogsData[id - 1].messagesData[state.messages.dialogsData[id - 1].messagesData.length - 1].id + 1,
             message: state.messages.newMessageText,
@@ -166,14 +166,18 @@ export let addMessage = (id) => {
         };
 
         state.messages.dialogsData[id - 1].messagesData.push(myMessageData);
-        state.messages.newMessageText = '';
+        state.messages.newMessageText = "";
         rerenderAllTree(state);
     }
 };
 
-export let typeNewMessageText = (newMessageText) => {
+export const typeNewMessageText = (newMessageText) => {
     state.messages.newMessageText = newMessageText;
     rerenderAllTree(state);
+};
+
+export const subscribe = (observer) => {
+    rerenderAllTree = observer;
 };
 
 export default state;
