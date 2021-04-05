@@ -1,0 +1,8 @@
+.dialogItem {
+    display: flex;
+    margin: 0 0 25px;
+}
+
+.dialogItem:last-child {
+    margin: 0;
+}

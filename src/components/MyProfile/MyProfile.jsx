@@ -1,4 +1,4 @@
-import classes from './MyProfile.module.css';
+import classes from "./MyProfile.module.css";
 import Wallpaper from "./Wallpaper/Wallpaper";
 import ProfileMenu from "./ProfileMenu/ProfileMenu";
 import MyPosts from "./MyPosts/MyPosts";
@@ -6,11 +6,11 @@ import SideBar from "./SideBar/SideBar";
 
 const MyProfile = (props) => {
     return (
-        <div className={classes.profile}>
+        <div className={classes.myProfile}>
             <Wallpaper />
             <ProfileMenu />
-            <MyPosts postsData={props.myProfile.postsData} />
-            <SideBar />
+            <MyPosts postsData={props.myProfile.postsData} addPost={props.addPost} newPostText={props.myProfile.newPostText} typeNewPostText={props.typeNewPostText} />
+            <SideBar myFriendsData={props.myProfile.myFriendsData} />
         </div>
     );
 };

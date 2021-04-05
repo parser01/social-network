@@ -1,4 +1,4 @@
-.profile {
+.myProfile {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -7,6 +7,6 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas: "Wallpaper Wallpaper"
                          "ProfileMenu ProfileMenu"
-                         "LeftPanel RightPanel";
+                         "LeftPane RightPane";
     column-gap: 28px;
 }

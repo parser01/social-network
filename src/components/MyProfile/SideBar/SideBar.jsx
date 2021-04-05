@@ -1,9 +1,10 @@
 import classes from "./SideBar.module.css";
+import MyFriends from "./MyFriends/MyFriends";
 
-const SideBar = () => {
+const SideBar = (props) => {
     return (
         <div className={classes.sideBar}>
-            SideBar
+            <MyFriends myFriendsData={props.myFriendsData}/>
         </div>
     );
 };

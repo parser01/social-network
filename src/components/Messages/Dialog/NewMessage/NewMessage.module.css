@@ -1,0 +1,21 @@
+.newMessage {
+    background-color: darkgrey;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.newMessage input {
+    flex: 1 1 auto;
+    border-radius: 5px;
+    height: 45px;
+    padding: 18px;
+    margin: 0 15px 0 0;
+}
+
+.newMessage button {
+    background-color: red;
+    border-radius: 5px;
+    color: #fff;
+    padding: 0 45px;
+}

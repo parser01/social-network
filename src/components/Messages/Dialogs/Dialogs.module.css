@@ -1,3 +1,11 @@
 .dialogs {
+    overflow: auto;
+}
 
+.dialogs h2 {
+    padding: 30px 20px;
+    border-right: 1px solid black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
 }

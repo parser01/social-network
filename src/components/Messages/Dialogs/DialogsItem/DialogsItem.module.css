@@ -1,7 +1,19 @@
 .dialogsItem {
-
+    border-top: 1px solid black;
+    border-right: 1px solid black;
 }
 
-a.active {
-    border-bottom: 1px solid;
+.dialogsItem a {
+    display: block;
+    padding: 30px 20px;
+}
+
+.dialogsItem a.active {
+    background-color: darkgrey;
+}
+
+.dialogsItem a > div {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 700;
 }

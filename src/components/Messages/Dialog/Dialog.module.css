@@ -1,3 +1,18 @@
 .dialog {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
 
+.dialog > div:first-child {
+    padding: 30px 20px;
+    border-bottom: 1px solid black;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.dialog > div:nth-child(2) {
+    padding: 20px 30px;
+    overflow: auto;
 }

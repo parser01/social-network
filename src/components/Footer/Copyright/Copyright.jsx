@@ -2,7 +2,7 @@ import classes from "./Copyright.module.css";
 
 const Copyright = () => {
     return (
-        <div className={classes.copyright}>&copy; Copyright 2019</div>
+        <div className={classes.copyright}>&copy; Copyright 2021</div>
     );
 };
 

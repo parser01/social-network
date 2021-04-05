@@ -6,7 +6,11 @@ const DialogsItem = (props) => {
 
     return (
         <div className={classes.dialogsItem}>
-            <NavLink to={ path } activeClassName={classes.active}>{ props.interlocutorName }</NavLink>
+            <NavLink to={ path } activeClassName={classes.active}>
+                <div>
+                    { props.interlocutorName }
+                </div>
+            </NavLink>
         </div>
     );
 };

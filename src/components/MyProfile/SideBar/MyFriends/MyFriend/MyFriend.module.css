@@ -1,0 +1,32 @@
+.myFriend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.myFriend:last-of-type {
+    margin-bottom: 25px;
+}
+
+.myFriend > div:first-child {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-right: 20px;
+    background-color: blue;
+}
+
+.myFriend > div:last-child {
+    font-weight: bold;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.myFriend > div:last-child:hover {
+    color: blue;
+}
+
+.myFriend img {
+    max-width: 100%;
+}
