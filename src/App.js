@@ -16,8 +16,10 @@ const App = (props) => {
           <Header />
           <NavBar />
           <div className="content">
-              <Route path="/profile" render={() => <MyProfile myProfile={props.state.myProfile} addPost={props.addPost} typeNewPostText={props.typeNewPostText} />} />
-              <Route path="/messages" render={() => <Messages messages={props.state.messages} typeNewMessageText={props.typeNewMessageText} addMessage={props.addMessage} />} />
+              <Route path="/profile" render={() => <MyProfile myProfile={props.state.myProfile} 
+              typeNewPostText={props.typeNewPostText} addPost={props.addPost} />} />
+              <Route path="/messages" render={() => <Messages messages={props.state.messages} 
+              typeNewMessageText={props.typeNewMessageText} addMessage={props.addMessage} />} />
               <Route exact path="/news" component={News} />
               <Route exact path="/music" component={Music} />
               <Route path="/settings" component={Settings} />

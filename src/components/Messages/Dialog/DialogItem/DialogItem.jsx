@@ -6,13 +6,13 @@ const DialogItem = (props) => {
     if (props.isMyMessage) {
         return (
             <div className={classes.dialogItem}>
-                <MyMessage id={props.id} message={props.message} />
+                <MyMessage message={props.message} />
             </div>
         );
     } else {
         return (
             <div className={classes.dialogItem}>
-                <NotMyMessage id={props.id} message={props.message} />
+                <NotMyMessage message={props.message} />
             </div>
         );
     }
