@@ -11,7 +11,7 @@ const store = {
                 { id: 3, message: "Wolverine", likesNumber: 35 }
             ],
 
-            newPostText: "Key principles",
+            newPostText: "Full Stack JavaScript React Developer",
 
             myFriendsData: [
                 { id: 1, myFriendName: "Cameron" },
@@ -153,12 +153,12 @@ const store = {
 
     dispatch(action) {
         switch (action.type) {
-            case "TYPE-NEW-POST-TEXT":
+            case TYPE_NEW_POST_TEXT:
                 this.state.myProfile.newPostText = action.newPostText;
                 this._notifySubscriber(this.state);
                 break;
 
-            case "ADD-POST":
+            case ADD_POST:
                 let newPostData = {
                     id: 4,
                     message: this.state.myProfile.newPostText,
@@ -170,12 +170,12 @@ const store = {
                 this._notifySubscriber(this.state);
                 break;
 
-            case "TYPE-NEW-MESSAGE-TEXT":
+            case TYPE_NEW_MESSAGE_TEXT:
                 this.state.messages.newMessageText = action.newMessageText;
                 this._notifySubscriber(this.state);
                 break;
 
-            case "ADD-MESSAGE":
+            case ADD_MESSAGE:
                 if (this.state.messages.newMessageText !== "") {
                     let myMessageData = {
                         id: this.state.messages.dialogsData[action.id - 1].messagesData[this.state.messages.dialogsData[action.id - 1].messagesData.length - 1].id + 1,
@@ -191,5 +191,29 @@ const store = {
         }
     }
 };
+
+const TYPE_NEW_POST_TEXT = "TYPE-NEW-POST-TEXT",
+    ADD_POST = "ADD-POST",
+    TYPE_NEW_MESSAGE_TEXT = "TYPE-NEW-MESSAGE-TEXT",
+    ADD_MESSAGE = "ADD-MESSAGE";
+
+export const typeNewPostTextActionCreator = (newPostText) => ({
+    type: TYPE_NEW_POST_TEXT,
+    newPostText: newPostText
+});
+
+export const addPostActionCreator = () => ({
+    type: ADD_POST
+});
+
+export const typeNewMessageTextActionCreator = (newMessageText) => ({
+    type: TYPE_NEW_MESSAGE_TEXT,
+    newMessageText: newMessageText
+});
+
+export const addMessageActionCreator = (id) => ({
+    type: ADD_MESSAGE,
+    id: id
+});
 
 export default store;
