@@ -6,11 +6,16 @@ const NewMessage = (props) => {
 
     let typeNewMessageText = () => {
         let newMessageText = input.current.value;
-        props.typeNewMessageText(newMessageText);
+        props.dispatch({
+            type: "TYPE-NEW-MESSAGE-TEXT",
+            newMessageText: newMessageText
+        });
 
     };
 
-    let addMessage = () => props.addMessage(props.id);
+    let addMessage = () => props.dispatch(
+        { type: "ADD-MESSAGE", id: props.id }
+    );
 
     return (
         <div className={classes.newMessage}>

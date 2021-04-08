@@ -12,8 +12,7 @@ const Dialog = (props) => {
             <div>
                 {messages}
             </div>
-            <NewMessage newMessageText={props.newMessageText} typeNewMessageText={props.typeNewMessageText} 
-            addMessage={props.addMessage} id={props.id} />
+            <NewMessage newMessageText={props.newMessageText} dispatch={props.dispatch} id={props.id} />
         </div>
     );
 };

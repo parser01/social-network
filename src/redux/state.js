@@ -11,7 +11,7 @@ const store = {
                 { id: 3, message: "Wolverine", likesNumber: 35 }
             ],
 
-            newPostText: "Moon and Earth and Venus",
+            newPostText: "Key principles",
 
             myFriendsData: [
                 { id: 1, myFriendName: "Cameron" },
@@ -151,39 +151,43 @@ const store = {
         return this._state;
     },
 
-    typeNewPostText(newPostText) {
-        this.state.myProfile.newPostText = newPostText;
-        this._notifySubscriber(this.state);
-    },
+    dispatch(action) {
+        switch (action.type) {
+            case "TYPE-NEW-POST-TEXT":
+                this.state.myProfile.newPostText = action.newPostText;
+                this._notifySubscriber(this.state);
+                break;
 
-    addPost() {
-        let newPostData = {
-            id: 4,
-            message: this.state.myProfile.newPostText,
-            likesNumber: 0
-        };
+            case "ADD-POST":
+                let newPostData = {
+                    id: 4,
+                    message: this.state.myProfile.newPostText,
+                    likesNumber: 0
+                };
 
-        this.state.myProfile.postsData.push(newPostData);
-        this.state.myProfile.newPostText = "";
-        this._notifySubscriber(this.state);
-    },
+                this.state.myProfile.postsData.push(newPostData);
+                this.state.myProfile.newPostText = "";
+                this._notifySubscriber(this.state);
+                break;
 
-    typeNewMessageText(newMessageText) {
-        this.state.messages.newMessageText = newMessageText;
-        this._notifySubscriber(this.state);
-    },
+            case "TYPE-NEW-MESSAGE-TEXT":
+                this.state.messages.newMessageText = action.newMessageText;
+                this._notifySubscriber(this.state);
+                break;
 
-    addMessage(id) {
-        if (this.state.messages.newMessageText !== "") {
-            let myMessageData = {
-                id: this.state.messages.dialogsData[id - 1].messagesData[this.state.messages.dialogsData[id - 1].messagesData.length - 1].id + 1,
-                message: this.state.messages.newMessageText,
-                myMessage: true
-            };
+            case "ADD-MESSAGE":
+                if (this.state.messages.newMessageText !== "") {
+                    let myMessageData = {
+                        id: this.state.messages.dialogsData[action.id - 1].messagesData[this.state.messages.dialogsData[action.id - 1].messagesData.length - 1].id + 1,
+                        message: this.state.messages.newMessageText,
+                        myMessage: true
+                    };
 
-            this.state.messages.dialogsData[id - 1].messagesData.push(myMessageData);
-            this.state.messages.newMessageText = "";
-            this._notifySubscriber(this.state);
+                    this.state.messages.dialogsData[action.id - 1].messagesData.push(myMessageData);
+                    this.state.messages.newMessageText = "";
+                    this._notifySubscriber(this.state);
+                }
+                break;
         }
     }
 };

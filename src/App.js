@@ -17,9 +17,9 @@ const App = (props) => {
           <NavBar />
           <div className="content">
               <Route path="/profile" render={() => <MyProfile myProfile={props.state.myProfile} 
-              typeNewPostText={props.typeNewPostText} addPost={props.addPost} />} />
+              dispatch={props.dispatch} />} />
               <Route path="/messages" render={() => <Messages messages={props.state.messages} 
-              typeNewMessageText={props.typeNewMessageText} addMessage={props.addMessage} />} />
+              dispatch={props.dispatch} />} />
               <Route exact path="/news" component={News} />
               <Route exact path="/music" component={Music} />
               <Route path="/settings" component={Settings} />
