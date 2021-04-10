@@ -139,7 +139,7 @@ const store = {
                 }
             ],
 
-            newMessageText: "Milk Way"
+            newMessageText: "SmartPhone"
         }
     },
 
@@ -178,7 +178,9 @@ const store = {
             case ADD_MESSAGE:
                 if (this.state.messages.newMessageText !== "") {
                     let myMessageData = {
-                        id: this.state.messages.dialogsData[action.id - 1].messagesData[this.state.messages.dialogsData[action.id - 1].messagesData.length - 1].id + 1,
+                        id: this.state.messages.dialogsData[action.id - 1]
+                            .messagesData[this.state.messages.dialogsData[action.id - 1]
+                                .messagesData.length - 1].id + 1,
                         message: this.state.messages.newMessageText,
                         myMessage: true
                     };

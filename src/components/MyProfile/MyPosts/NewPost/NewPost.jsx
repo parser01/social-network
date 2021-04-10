@@ -1,6 +1,6 @@
 import classes from "./NewPost.module.css";
 import React from "react";
-import { addPostActionCreator, typeNewPostTextActionCreator } from "../../../../redux/state";
+import { addPostActionCreator, typeNewPostTextActionCreator } from "../../../../redux/store";
 
 const NewPost = (props) => {
     let newPostInput = React.createRef();
