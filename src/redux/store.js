@@ -1,3 +1,6 @@
+import messagesReducer from "./messages-reducer";
+import myProfileReducer from "./myProfile-reducer";
+
 let rerenderAllTree;
 
 const store = {
@@ -11,7 +14,7 @@ const store = {
                 { id: 3, message: "Wolverine", likesNumber: 35 }
             ],
 
-            newPostText: "Full Stack JavaScript React Developer",
+            newPostText: "Ford",
 
             myFriendsData: [
                 { id: 1, myFriendName: "Cameron" },
@@ -139,7 +142,7 @@ const store = {
                 }
             ],
 
-            newMessageText: "SmartPhone"
+            newMessageText: ""
         }
     },
 
@@ -152,70 +155,10 @@ const store = {
     },
 
     dispatch(action) {
-        switch (action.type) {
-            case TYPE_NEW_POST_TEXT:
-                this.state.myProfile.newPostText = action.newPostText;
-                this._notifySubscriber(this.state);
-                break;
-
-            case ADD_POST:
-                let newPostData = {
-                    id: 4,
-                    message: this.state.myProfile.newPostText,
-                    likesNumber: 0
-                };
-
-                this.state.myProfile.postsData.push(newPostData);
-                this.state.myProfile.newPostText = "";
-                this._notifySubscriber(this.state);
-                break;
-
-            case TYPE_NEW_MESSAGE_TEXT:
-                this.state.messages.newMessageText = action.newMessageText;
-                this._notifySubscriber(this.state);
-                break;
-
-            case ADD_MESSAGE:
-                if (this.state.messages.newMessageText !== "") {
-                    let myMessageData = {
-                        id: this.state.messages.dialogsData[action.id - 1]
-                            .messagesData[this.state.messages.dialogsData[action.id - 1]
-                                .messagesData.length - 1].id + 1,
-                        message: this.state.messages.newMessageText,
-                        myMessage: true
-                    };
-
-                    this.state.messages.dialogsData[action.id - 1].messagesData.push(myMessageData);
-                    this.state.messages.newMessageText = "";
-                    this._notifySubscriber(this.state);
-                }
-                break;
-        }
+        myProfileReducer(this._state.myProfile, action);
+        messagesReducer(this._state.messages, action);
+        this._notifySubscriber(this._state);
     }
 };
-
-const TYPE_NEW_POST_TEXT = "TYPE-NEW-POST-TEXT",
-    ADD_POST = "ADD-POST",
-    TYPE_NEW_MESSAGE_TEXT = "TYPE-NEW-MESSAGE-TEXT",
-    ADD_MESSAGE = "ADD-MESSAGE";
-
-export const typeNewPostTextActionCreator = (newPostText) => ({
-    type: TYPE_NEW_POST_TEXT,
-    newPostText: newPostText
-});
-
-export const addPostActionCreator = () => ({
-    type: ADD_POST
-});
-
-export const typeNewMessageTextActionCreator = (newMessageText) => ({
-    type: TYPE_NEW_MESSAGE_TEXT,
-    newMessageText: newMessageText
-});
-
-export const addMessageActionCreator = (id) => ({
-    type: ADD_MESSAGE,
-    id: id
-});
 
 export default store;

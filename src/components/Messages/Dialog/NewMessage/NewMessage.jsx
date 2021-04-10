@@ -1,6 +1,6 @@
 import classes from "./NewMessage.module.css";
 import React from "react";
-import { typeNewMessageTextActionCreator, addMessageActionCreator } from '../../../../redux/store';
+import { typeNewMessageTextActionCreator, addMessageActionCreator } from '../../../../redux/messages-reducer';
 
 
 const NewMessage = (props) => {
