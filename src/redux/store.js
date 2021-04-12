@@ -150,7 +150,7 @@ const store = {
         this._notifySubscriber = observer;
     },
 
-    get state() {
+    getState() {
         return this._state;
     },
 
