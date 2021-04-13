@@ -6,13 +6,17 @@ import { typeNewMessageTextActionCreator, addMessageActionCreator } from '../../
 const NewMessage = (props) => {
     // let input = React.createRef();
 
-    let typeNewMessageText = (event) => {
+    const typeNewMessageText = (event) => {
         // let newMessageText = input.current.value;
-        let newMessageText = event.target.value;
-        props.dispatch(typeNewMessageTextActionCreator(newMessageText));
+        const newMessageText = event.target.value;
+        // props.dispatch(typeNewMessageTextActionCreator(newMessageText));
+        props.typeNewMessageText(newMessageText);
     };
 
-    let addMessage = () => props.dispatch(addMessageActionCreator(props.id));
+    const addMessage = () => { 
+        // props.dispatch(addMessageActionCreator(props.id));
+        props.addMessage();
+    }
 
     return (
         <div className={classes.newMessage}>

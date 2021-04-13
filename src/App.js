@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import MyProfile from "./components/MyProfile/MyProfile";
@@ -11,22 +11,22 @@ import Settings from "./components/Settings/Settings";
 import Footer from "./components/Footer/Footer";
 
 const App = (props) => {
-  return (
-      <div className="appWrapper">
-          <Header />
-          <NavBar />
-          <div className="content">
-              <Route path="/profile" render={() => <MyProfile myProfile={props.state.myProfile} 
-              dispatch={props.dispatch} />} />
-              <Route path="/messages" render={() => <Messages messages={props.state.messages} 
-              dispatch={props.dispatch} />} />
-              <Route exact path="/news" component={News} />
-              <Route exact path="/music" component={Music} />
-              <Route path="/settings" component={Settings} />
-          </div>
-          <Footer />
-      </div>
-  );
+    return (
+        <div className="appWrapper">
+            <Header />
+            <NavBar />
+            <div className="content">
+                <Route path="/profile" render={() => <MyProfile myProfile={props.state.myProfile}
+                    store={props.store} />} />
+                <Route path="/messages" render={() => <Messages messages={props.state.messages}
+                    store={props.store} />} />
+                <Route exact path="/news" component={News} />
+                <Route exact path="/music" component={Music} />
+                <Route path="/settings" component={Settings} />
+            </div>
+            <Footer />
+        </div>
+    );
 };
 
 export default App;

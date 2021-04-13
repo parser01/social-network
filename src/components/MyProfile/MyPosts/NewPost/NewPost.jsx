@@ -1,17 +1,16 @@
 import classes from "./NewPost.module.css";
 import React from "react";
-import { addPostActionCreator, typeNewPostTextActionCreator } from "../../../../redux/myProfile-reducer";
 
 const NewPost = (props) => {
-    let newPostInput = React.createRef();
+    const newPostInput = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    const addPost = () => {
+        props.addPost();
     };
 
-    let typeNewPostText = () => {
-        let newPostText = newPostInput.current.value;
-        props.dispatch(typeNewPostTextActionCreator(newPostText));
+    const typeNewPostText = () => {
+        const newPostText = newPostInput.current.value;
+        props.typeNewPostText(newPostText);
     };
 
     return (

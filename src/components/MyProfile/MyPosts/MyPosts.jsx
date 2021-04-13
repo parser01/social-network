@@ -1,11 +1,11 @@
 import classes from "./MyPosts.module.css";
-import NewPost from "./NewPost/NewPost";
+import NewPostContainer from "./NewPost/NewPostContainer";
 import PublishedPosts from "./PublishedPosts/PublishedPosts";
 
 const MyPosts = (props) => {
     return (
         <div className={classes.myPosts}>
-            <NewPost dispatch={props.dispatch} newPostText={props.newPostText} />
+            <NewPostContainer store={props.store} />
             <PublishedPosts postsData={props.postsData} />
         </div>
     );

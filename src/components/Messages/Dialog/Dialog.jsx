@@ -1,9 +1,9 @@
 import classes from "./Dialog.module.css";
 import DialogItem from "./DialogItem/DialogItem";
-import NewMessage from "./NewMessage/NewMessage";
+import NewMessageContainer from "./NewMessage/NewMessageContainer";
 
 const Dialog = (props) => {
-    let messages = props.dialogsDataItem.messagesData.map(i => <DialogItem message={i.message} 
+    let messages = props.dialogsDataItem.messagesData.map(i => <DialogItem message={i.message}
         isMyMessage={i.myMessage} />);
 
     return (
@@ -12,7 +12,7 @@ const Dialog = (props) => {
             <div>
                 {messages}
             </div>
-            <NewMessage newMessageText={props.newMessageText} dispatch={props.dispatch} id={props.id} />
+            <NewMessageContainer id={props.id} store={props.store} />
         </div>
     );
 };

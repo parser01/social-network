@@ -5,8 +5,8 @@ import {Route} from "react-router-dom";
 
 const Messages = (props) => {
     let routes = props.messages.dialogsItemsData.map(i => <Route path={`/messages/${i.id}`} render={() => <Dialog
-        dialogsDataItem={props.messages.dialogsData[i.id-1]} interlocutorName={i.interlocutorName}
-        newMessageText={props.messages.newMessageText} dispatch={props.dispatch} id={i.id} />} />);
+        dialogsDataItem={props.messages.dialogsData[i.id-1]} interlocutorName={i.interlocutorName} id={i.id} 
+        store={props.store} />} />);
 
     return (
         <div className={classes.messages}>
