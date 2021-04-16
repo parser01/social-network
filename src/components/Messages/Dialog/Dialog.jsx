@@ -12,7 +12,7 @@ const Dialog = (props) => {
             <div>
                 {messages}
             </div>
-            <NewMessageContainer id={props.id} store={props.store} />
+            <NewMessageContainer id={props.id} /* store={props.store} */ />
         </div>
     );
 };

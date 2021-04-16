@@ -8,7 +8,7 @@ const initialState = {
       { id: 3, message: "Wolverine", likesNumber: 35 }
    ],
 
-   newPostText: "The Pacific Ocean",
+   newPostText: "The Atlantic Ocean",
 
    myFriendsData: [
       { id: 1, myFriendName: "Cameron" },

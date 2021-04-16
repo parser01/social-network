@@ -9,7 +9,7 @@ const MyProfile = (props) => {
         <div className={classes.myProfile}>
             <Wallpaper />
             <ProfileMenu />
-            <MyPosts postsData={props.myProfile.postsData} store={props.store} />
+            <MyPosts postsData={props.myProfile.postsData} /* store={props.store} */ />
             <SideBar myFriendsData={props.myProfile.myFriendsData} />
         </div>
     );
